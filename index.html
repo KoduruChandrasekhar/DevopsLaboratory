@@ -7,6 +7,7 @@
       font-family: Arial;
       background-color: lightblue;
     }
+
     .box {
       width: 300px;
       margin: 50px auto;
@@ -14,37 +15,45 @@
       background-color: white;
       border-radius: 10px;
     }
+
     input, button {
-       width: 100%;
-       padding: 8px;
-        margin: 5px 0;
-        box-sizing: border-box;
+      width: 100%;
+      padding: 8px;
+      margin: 5px 0;
+      box-sizing: border-box;
     }
+
     button {
-      background-color: blue;
+      background-color: rgb(35, 35, 183);
       color: white;
       border: none;
+    }
+
+    #message {
+      font-size: 30px;
+      color: green;
+      text-align: center;
     }
   </style>
 </head>
 <body>
   <div class="box">
     <h2>Event Registration</h2>
-    <form id="form" onsubmit="register(); return false;">
+
+    <form onsubmit="register(); return false;">
       Name: <input id="name" required>
       Email: <input id="email" type="email" required>
       Phone: <input id="phone" pattern="[0-9]{10}" required>
       <button id="btn">Register</button>
     </form>
+
     <p id="message"></p>
   </div>
 
   <script>
     function register() {
-      var name = document.getElementById("name").value;
-      document.getElementById("message").innerHTML = "Registration Successful! Welcome " + name;
-      document.getElementById("message").style.color = "green";
-      document.getElementById("form").reset();
+      document.body.style.backgroundColor = "lightgreen";
+      document.getElementById("message").innerHTML = "Registration Successful!";
     }
   </script>
 </body>
